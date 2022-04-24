@@ -20,6 +20,8 @@
 		6C6609A02815A3680002B969 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C66099F2815A3680002B969 /* AuthViewController.storyboard */; };
 		6C6609A22815A5DB0002B969 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6609A12815A5DB0002B969 /* NetworkService.swift */; };
 		6C6609A42815A67D0002B969 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6609A32815A67D0002B969 /* API.swift */; };
+		6C6609A72815E25E0002B969 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6609A62815E25E0002B969 /* FeedResponse.swift */; };
+		6C6609A92815E3EC0002B969 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6609A82815E3EC0002B969 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,8 @@
 		6C66099F2815A3680002B969 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		6C6609A12815A5DB0002B969 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6C6609A32815A67D0002B969 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6C6609A62815E25E0002B969 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		6C6609A82815E3EC0002B969 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +91,9 @@
 			children = (
 				6C6609782815919C0002B969 /* AppDelegate.swift */,
 				6C66097A2815919C0002B969 /* SceneDelegate.swift */,
+				6C660994281596AB0002B969 /* Services */,
 				6C66099C2815A1250002B969 /* Auth */,
 				6C66099B2815A0E40002B969 /* FeedViewController */,
-				6C660994281596AB0002B969 /* Services */,
 				6C6609812815919E0002B969 /* Assets.xcassets */,
 				6C6609832815919E0002B969 /* LaunchScreen.storyboard */,
 				6C6609862815919E0002B969 /* Info.plist */,
@@ -108,8 +112,10 @@
 		6C660994281596AB0002B969 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6C6609A52815E24E0002B969 /* Models */,
 				6C660992281596A70002B969 /* AuthService.swift */,
 				6C6609A12815A5DB0002B969 /* NetworkService.swift */,
+				6C6609A82815E3EC0002B969 /* NetworkDataFetcher.swift */,
 				6C6609A32815A67D0002B969 /* API.swift */,
 			);
 			path = Services;
@@ -131,6 +137,14 @@
 				6C66099F2815A3680002B969 /* AuthViewController.storyboard */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		6C6609A52815E24E0002B969 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6C6609A62815E25E0002B969 /* FeedResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,11 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6609A72815E25E0002B969 /* FeedResponse.swift in Sources */,
 				6C66097D2815919C0002B969 /* AuthViewController.swift in Sources */,
 				6C6609792815919C0002B969 /* AppDelegate.swift in Sources */,
 				6C6609982815A0830002B969 /* FeedViewController.swift in Sources */,
 				6C66097B2815919C0002B969 /* SceneDelegate.swift in Sources */,
 				6C6609A22815A5DB0002B969 /* NetworkService.swift in Sources */,
+				6C6609A92815E3EC0002B969 /* NetworkDataFetcher.swift in Sources */,
 				6C660993281596A70002B969 /* AuthService.swift in Sources */,
 				6C6609A42815A67D0002B969 /* API.swift in Sources */,
 			);
