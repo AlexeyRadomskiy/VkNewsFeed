@@ -41,6 +41,6 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
     
     private func presentFeed() {
         guard let feedResponse = feedResponse else { return }
-        presenter?.presentData(response: Newsfeed.Model.Response.ResponseType.presentNewsfeed(feed: feedResponse, revealdedPostIds: revealedPostIds))
+        presenter?.presentData(response: Newsfeed.Model.Response.ResponseType.presentNewsfeed(feed: feedResponse, revealedPostIds: revealedPostIds))
     }
 }
