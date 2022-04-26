@@ -115,8 +115,8 @@
 			children = (
 				6C5187982816A1590073B03E /* NewsfeedCell.xib */,
 				6C5187962816A1330073B03E /* NewsfeedCell.swift */,
-				6CA378EB281851E400FD48EC /* NewfeedCellLayoutCalculator.swift */,
 				6CA378EF2818621900FD48EC /* NewsfeedCodeCell.swift */,
+				6CA378EB281851E400FD48EC /* NewfeedCellLayoutCalculator.swift */,
 				6CA378F328186AA400FD48EC /* Constants.swift */,
 			);
 			path = Cell;

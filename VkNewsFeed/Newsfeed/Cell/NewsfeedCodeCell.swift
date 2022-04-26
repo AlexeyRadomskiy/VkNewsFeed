@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol NewsfeedCodeCellDelegate: AnyObject {
+    func revealPost(for cell: NewsfeedCodeCell)
+}
+
 final class NewsfeedCodeCell: UITableViewCell {
     
     static let reuseId = "NewsfeedCodeCell"
+    
+    weak var delegate: NewsfeedCodeCellDelegate?
     
     // MARK: - First Layer
     
@@ -34,6 +40,16 @@ final class NewsfeedCodeCell: UITableViewCell {
         label.font = Constants.postLabelFont
         label.textColor = #colorLiteral(red: 0.2273307443, green: 0.2323131561, blue: 0.2370453477, alpha: 1)
         return label
+    }()
+    
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(#colorLiteral(red: 0.4, green: 0.6235294118, blue: 0.831372549, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Показать полностью...", for: .normal)
+        return button
     }()
     
     let postImageView: WebImageView = {
@@ -163,8 +179,16 @@ final class NewsfeedCodeCell: UITableViewCell {
         return label
     }()
     
+    override func prepareForReuse() {
+        iconImageView.set(imageURL: nil)
+        postImageView.set(imageURL: nil)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
+        iconImageView.clipsToBounds = true
         
         backgroundColor = .clear
         selectionStyle = .none
@@ -172,11 +196,17 @@ final class NewsfeedCodeCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
         
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
+        
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
         overlayThirdLayerOnBottomView()
         overlayFourthLayerOnBottomView()
+    }
+    
+    @objc func moreTextButtonTouch() {
+        delegate?.revealPost(for: self)
     }
     
     func set(viewModel: FeedCellViewModel) {
@@ -193,6 +223,7 @@ final class NewsfeedCodeCell: UITableViewCell {
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
         if let photoAttachment = viewModel.photoAttachment {
             postImageView.set(imageURL: photoAttachment.photoUrlString)
@@ -247,18 +278,18 @@ final class NewsfeedCodeCell: UITableViewCell {
                                       height: Constants.bottomViewViewHeight))
         
         commentsView.anchor(top: bottomView.topAnchor,
-                         leading: likesView.trailingAnchor,
-                         bottom: nil,
-                         trailing: nil,
-                         size: CGSize(width: Constants.bottomViewViewWidth,
-                                      height: Constants.bottomViewViewHeight))
+                            leading: likesView.trailingAnchor,
+                            bottom: nil,
+                            trailing: nil,
+                            size: CGSize(width: Constants.bottomViewViewWidth,
+                                         height: Constants.bottomViewViewHeight))
         
         sharesView.anchor(top: bottomView.topAnchor,
-                         leading: commentsView.trailingAnchor,
-                         bottom: nil,
-                         trailing: nil,
-                         size: CGSize(width: Constants.bottomViewViewWidth,
-                                      height: Constants.bottomViewViewHeight))
+                          leading: commentsView.trailingAnchor,
+                          bottom: nil,
+                          trailing: nil,
+                          size: CGSize(width: Constants.bottomViewViewWidth,
+                                       height: Constants.bottomViewViewHeight))
         
         viewsView.anchor(top: bottomView.topAnchor,
                          leading: nil,
@@ -292,6 +323,7 @@ final class NewsfeedCodeCell: UITableViewCell {
     private func overlaySecondLayer() {
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
+        cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
         cardView.addSubview(bottomView)
         
@@ -300,13 +332,6 @@ final class NewsfeedCodeCell: UITableViewCell {
         topView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
         topView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
         topView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
-        
-        // MARK: - postLabel constraints
-        
-        // MARK: - postImageView constraints
-        
-        // MARK: - bottomView constraints
-        
     }
     
     private func overlayFirstLayer() {
