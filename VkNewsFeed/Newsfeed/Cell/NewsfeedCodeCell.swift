@@ -346,7 +346,7 @@ final class NewsfeedCodeCell: UITableViewCell {
     }
     
     private func overlayFirstLayer() {
-        addSubview(cardView)
+        contentView.addSubview(cardView)
         
         // MARK: - cardView constraints
         cardView.fillSuperview(padding: Constants.cardInserts)
