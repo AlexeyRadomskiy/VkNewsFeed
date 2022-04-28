@@ -11,6 +11,8 @@
 		6C121477281A6822005DAE04 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C121476281A6822005DAE04 /* InsertableTextField.swift */; };
 		6C121479281A6E2D005DAE04 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C121478281A6E2D005DAE04 /* UserResponse.swift */; };
 		6C12147A281A7C7F005DAE04 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C66098E281595540002B969 /* VKSdkFramework.framework */; platformFilter = ios; };
+		6C12147F281AF720005DAE04 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C12147E281AF720005DAE04 /* FooterView.swift */; };
+		6C121481281AFA68005DAE04 /* Localizable.stringdict.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 6C121480281AFA68005DAE04 /* Localizable.stringdict.stringsdict */; };
 		6C51878C28169AEA0073B03E /* NewsfeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C51878528169AEA0073B03E /* NewsfeedPresenter.swift */; };
 		6C51878D28169AEA0073B03E /* NewsfeedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C51878628169AEA0073B03E /* NewsfeedWorker.swift */; };
 		6C51878E28169AEA0073B03E /* NewsfeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C51878728169AEA0073B03E /* NewsfeedRouter.swift */; };
@@ -46,6 +48,8 @@
 		6C121474281A6772005DAE04 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		6C121476281A6822005DAE04 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		6C121478281A6E2D005DAE04 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		6C12147E281AF720005DAE04 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		6C121480281AFA68005DAE04 /* Localizable.stringdict.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringdict.stringsdict; sourceTree = "<group>"; };
 		6C51878528169AEA0073B03E /* NewsfeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedPresenter.swift; sourceTree = "<group>"; };
 		6C51878628169AEA0073B03E /* NewsfeedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedWorker.swift; sourceTree = "<group>"; };
 		6C51878728169AEA0073B03E /* NewsfeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedRouter.swift; sourceTree = "<group>"; };
@@ -101,9 +105,18 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		6C12147D281AF70D005DAE04 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				6C12147E281AF720005DAE04 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		6C51878428169A7F0073B03E /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
+				6C12147D281AF70D005DAE04 /* FooterView */,
 				6C121473281A6748005DAE04 /* TitleView */,
 				6CA378F5281883D700FD48EC /* GalleryView */,
 				6C5187952816A1270073B03E /* Cell */,
@@ -159,6 +172,7 @@
 				6C6609812815919E0002B969 /* Assets.xcassets */,
 				6C6609832815919E0002B969 /* LaunchScreen.storyboard */,
 				6C6609862815919E0002B969 /* Info.plist */,
+				6C121480281AFA68005DAE04 /* Localizable.stringdict.stringsdict */,
 			);
 			path = VkNewsFeed;
 			sourceTree = "<group>";
@@ -285,6 +299,7 @@
 				6C51879428169D170073B03E /* NewsfeedViewController.storyboard in Resources */,
 				6C6609822815919E0002B969 /* Assets.xcassets in Resources */,
 				6C5187992816A1590073B03E /* NewsfeedCell.xib in Resources */,
+				6C121481281AFA68005DAE04 /* Localizable.stringdict.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA378FB2819C10F00FD48EC /* RowLayout.swift in Sources */,
+				6C12147F281AF720005DAE04 /* FooterView.swift in Sources */,
 				6C6609A72815E25E0002B969 /* FeedResponse.swift in Sources */,
 				6CA378EE28185A2000FD48EC /* String + Height.swift in Sources */,
 				6C51879028169AEA0073B03E /* NewsfeedViewController.swift in Sources */,
