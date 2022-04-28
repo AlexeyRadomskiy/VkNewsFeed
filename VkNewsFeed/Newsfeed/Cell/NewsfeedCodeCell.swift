@@ -63,6 +63,7 @@ final class NewsfeedCodeCell: UITableViewCell {
     
     let postImageView: WebImageView = {
         let imageView = WebImageView()
+        imageView.backgroundColor = #colorLiteral(red: 0.8649391532, green: 0.4003493488, blue: 0.4023396075, alpha: 1)
         return imageView
     }()
     
