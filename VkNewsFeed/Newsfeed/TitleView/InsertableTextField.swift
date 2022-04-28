@@ -14,7 +14,7 @@ class InsertableTextField: UITextField {
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = #colorLiteral(red: 0.9467977881, green: 0.9467977881, blue: 0.9467977881, alpha: 1)
-        placeholder = "Search"
+        placeholder = "Поиск"
         font = UIFont.systemFont(ofSize: 14)
         clearButtonMode = .whileEditing
         borderStyle = .none
